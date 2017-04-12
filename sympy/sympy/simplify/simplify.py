@@ -102,6 +102,7 @@ def separatevars(expr, symbols=[], dict=False, force=False):
 
     """
     expr = sympify(expr)
+    print("simplify.py expr ", expr)
     if dict:
         return _separatevars_dict(_separatevars(expr, force), symbols)
     else:
@@ -511,7 +512,7 @@ def simplify(expr, ratio=1.7, measure=count_ops, fu=False):
  #   print("Quang, expr: ", expr)
 
     try:
-        print("Quang, expr: ", expr)
+        print("Expr: ", expr)
         return expr._eval_simplify(ratio=ratio, measure=measure)
     except AttributeError:
         pass
@@ -579,10 +580,10 @@ def simplify(expr, ratio=1.7, measure=count_ops, fu=False):
     if expr.has(CombinatorialFunction, gamma):
         expr = combsimp(expr)
 
-    print ("Quang, check sum", expr.has(Sum))
+    #print ("Quang, check sum", expr.has(Sum))
     if expr.has(Sum):
         expr = sum_simplify(expr)
-        print("Quang, expr: ", expr)
+        #print("Quang, expr: ", expr)
 
     if expr.has(Product):
         expr = product_simplify(expr)

@@ -190,8 +190,16 @@ class Pow(Expr):
             evaluate = global_evaluate[0]
         from sympy.functions.elementary.exponential import exp_polar
 
+        # global b, e
         b = _sympify(b)
         e = _sympify(e)
+
+        print("-----BEGIN----")
+        print("POWER")
+        print("b: ", b)
+        print("e: ", e)
+        print("-----END-----")
+
         if evaluate:
             if e is S.Zero:
                 return S.One

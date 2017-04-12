@@ -247,21 +247,32 @@ class Mul(Expr, AssocOp):
 
         #s = str(type(b))
         
-        lNotPrint = ["<class 'sympy.core.numbers.ImaginaryUnit'>", 
-                     "<class 'sympy.core.symbol.Dummy'>", 
-                     "<class 'sympy.core.symbol.Symbol'>"]
-        if a is not None and b is not None:
-            if ((a in lNotPrint == False) and (b in lNotPrint == False)):
-                #print("Mul Seq: ", seq)
-                print("Muliply")
-                print("First operand: ", a)
-                print("Second operand: ", b)
+        # lNotPrint = ["<class 'sympy.core.numbers.ImaginaryUnit'>", 
+        #              "<class 'sympy.core.symbol.Dummy'>", 
+        #              "<class 'sympy.core.symbol.Symbol'>"]
+        # if a is not None and b is not None:
+        #     if ((a in lNotPrint == False) and (b in lNotPrint == False)):
+        #         #print("Mul Seq: ", seq)
+        #         print("MUL")
+        #         # print("First operand: ", a)
+        #         # print("Second operand: ", b)
+        #         print(a, " * ", b)
             
+        
+        print("-----BEGIN----")
+        print("MUL")
+        print("Operands: ", seq)
+        print("-----END-----")
+        
+
 
         for o in seq:
             # O(x)
             if o.is_Order:
+                print("Is Order")
                 o, order_symbols = o.as_expr_variables(order_symbols)
+
+            
 
             # Mul([...])
             if o.is_Mul:
@@ -313,6 +324,7 @@ class Mul(Expr, AssocOp):
                 continue
 
             elif o.is_commutative:
+                
                 #      e
                 # o = b
                 b, e = o.as_base_exp()
@@ -641,8 +653,11 @@ class Mul(Expr, AssocOp):
             c_part = [Add(*[coeff*f for f in c_part[1].args])]
 
 
-        if ((c_part in lNotPrint == False) and (nc_part in lNotPrint == False)):
-            print("Next step: ", c_part, nc_part, order_symbols)
+        # if ((c_part in lNotPrint == False) and (nc_part in lNotPrint == False)):
+        #     print("Next step: ", c_part, nc_part, order_symbols)
+
+        
+
         return c_part, nc_part, order_symbols
 
     def _eval_power(b, e):

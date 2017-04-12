@@ -239,6 +239,7 @@ def sympify(a, locals=None, convert_xor=True, strict=False, rational=False,
     #print("Evaluate: ", evaluate)
     #print("global_evaluate[0]: ", global_evaluate[0])
 
+
     if evaluate is None:
         if global_evaluate[0] is False:
             evaluate = global_evaluate[0]

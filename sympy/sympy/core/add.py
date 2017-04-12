@@ -68,7 +68,7 @@ def _unevaluated_Add(*args):
 
 class Add(Expr, AssocOp):
 
-    print ("Add expr: ", Expr, AssocOp)
+    #print ("Add expr: ", Expr, AssocOp)
 
     __slots__ = []
 
@@ -116,29 +116,25 @@ class Add(Expr, AssocOp):
 
 
         #s = str(type(b))
-<<<<<<< HEAD
+
         lNotPrint = ["<class 'sympy.core.numbers.ImaginaryUnit'>",
                        "<class 'sympy.core.symbol.Dummy'>",
                        "<class 'sympy.core.symbol.Symbol'>"]
 
 
 
-        if ((a in lNotPrint == False) and (b in lNotPrint == False)):
-            print("Seq: ", seq)
-            print("Add operator")
-            print("First operand: ", a)
-            print("Second operand: ", b)
-=======
-        lNotPrint = ["<class 'sympy.core.numbers.ImaginaryUnit'>", 
-                     "<class 'sympy.core.symbol.Dummy'>", 
-                     "<class 'sympy.core.symbol.Symbol'>"]
-        if a is not None and b is not None:
-            if ((a in lNotPrint == False) and (b in lNotPrint == False)):
-                print("Seq: ", seq)
-                print("Add operator")
-                print("First operand: ", a)
-                print("Second operand: ", b)
->>>>>>> a4f783531e8f043cf82b6aaaafc3f5ca5af04e5f
+        # if ((a in lNotPrint == False) and (b in lNotPrint == False)):
+            # print("Seq: ", seq)
+            # print("Add operator")
+            # print("First operand: ", a)
+            # print("Second operand: ", b)
+
+        print("-----BEGIN----")
+        print("ADD")
+        print("Operands: ", seq)
+        # print("a, b: ", a, b)
+        print("-----END-----")
+
 
 
         for o in seq:
@@ -294,7 +290,7 @@ class Add(Expr, AssocOp):
 
         # we are done
         #mmkmk = newseq[1]
-        print("Next Step: ", newseq)
+        # print("Next Step: ", newseq)
         if noncommutative:
             return [], newseq, None
         else:
@@ -424,7 +420,7 @@ class Add(Expr, AssocOp):
         >>> (3*x*y).as_two_terms()
         (3, x*y)
         """
-        print("Add 2 term:", self.args)
+        #print("Add 2 term:", self.args)
         if len(self.args) == 1:
             return S.Zero, self
         return self.args[0], self._new_rawargs(*self.args[1:])
