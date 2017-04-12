@@ -175,6 +175,7 @@ class Mul(Expr, AssocOp):
         from sympy.calculus.util import AccumBounds
         rv = None
         if len(seq) == 2:
+            global a, b
             a, b = seq
             if b.is_Rational:
                 a, b = b, a

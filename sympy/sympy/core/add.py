@@ -95,6 +95,7 @@ class Add(Expr, AssocOp):
         from sympy.calculus.util import AccumBounds
         rv = None
         if len(seq) == 2:
+            global a, b
             a, b = seq
             if b.is_Rational:
                 a, b = b, a
@@ -115,9 +116,12 @@ class Add(Expr, AssocOp):
 
 
         #s = str(type(b))
-        lNotPrint = ["<class 'sympy.core.numbers.ImaginaryUnit'>", 
-                     "<class 'sympy.core.symbol.Dummy'>", 
-                     "<class 'sympy.core.symbol.Symbol'>"]
+        lNotPrint = ["<class 'sympy.core.numbers.ImaginaryUnit'>",
+                       "<class 'sympy.core.symbol.Dummy'>",
+                       "<class 'sympy.core.symbol.Symbol'>"]
+
+
+
         if ((a in lNotPrint == False) and (b in lNotPrint == False)):
             print("Seq: ", seq)
             print("Add operator")

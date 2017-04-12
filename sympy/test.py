@@ -9,14 +9,8 @@ z = symbols('z')
 
 # a = 4*x*y*z + 3*y*x*z + 2*z*x*y + 2 + 3
 
-b = "5*x + 3*x"
+#b = "((x-1)(x-2))/(x-1)"
+
+print(simplify((x**3 + x**2 - x - 1)/(x**2 + 2*x + 1)))
 
 
-#b = 2*x*x
-print("b: ", simplify(b))
-# print("Str expr: ", str_expr)
-# a = sympify(str_expr)
-# print("Result: ", a)
-
-
-# simplify(a)

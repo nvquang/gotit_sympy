@@ -505,10 +505,10 @@ def simplify(expr, ratio=1.7, measure=count_ops, fu=False):
     from the input expression by doing this.
     """
 
-    print("expr 2222: ", expr, type(expr))
-    expr = sympify(expr)
+ #   print("expr 2222: ", expr, type(expr))
+ #   expr = sympify(expr)
 
-    print("Quang, expr: ", expr)
+ #   print("Quang, expr: ", expr)
 
     try:
         print("Quang, expr: ", expr)
@@ -517,7 +517,7 @@ def simplify(expr, ratio=1.7, measure=count_ops, fu=False):
         pass
 
     original_expr = expr = signsimp(expr)
-    print("Quang, original_expr: ", original_expr)
+    # print("Quang, original_expr: ", original_expr)
 
     from sympy.simplify.hyperexpand import hyperexpand
     from sympy.functions.special.bessel import BesselBase
