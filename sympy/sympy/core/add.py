@@ -113,6 +113,7 @@ class Add(Expr, AssocOp):
                         # e.g. 3 + ...
         order_factors = []
 
+
         #s = str(type(b))
         lNotPrint = ["<class 'sympy.core.numbers.ImaginaryUnit'>", 
                      "<class 'sympy.core.symbol.Dummy'>", 
@@ -122,6 +123,7 @@ class Add(Expr, AssocOp):
             print("Add operator")
             print("First operand: ", a)
             print("Second operand: ", b)
+
 
         for o in seq:
 

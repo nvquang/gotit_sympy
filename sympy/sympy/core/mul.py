@@ -171,7 +171,7 @@ class Mul(Expr, AssocOp):
 
               Removal of 1 from the sequence is already handled by AssocOp.__new__.
         """
-
+        print("Mul.py Expr: ", Expr)
         from sympy.calculus.util import AccumBounds
         rv = None
         if len(seq) == 2:
@@ -233,6 +233,17 @@ class Mul(Expr, AssocOp):
         # o pnum_rat
         #
         # NOTE: this is optimized for all-objects-are-commutative case
+
+
+
+        print("cls: ", cls)
+        print("Mul Seq: ", seq)
+
+        print("Mul operator")
+        print("First operand: ", a)
+        print("Second operand: ", b)
+
+
         s = str(type(b))
         lNotPrint = ["<class 'sympy.core.numbers.ImaginaryUnit'>", 
                      "<class 'sympy.core.symbol.Dummy'>", 
@@ -243,6 +254,7 @@ class Mul(Expr, AssocOp):
             print("First operand: ", a)
             print("Second operand: ", b)
             
+
         for o in seq:
             # O(x)
             if o.is_Order:
@@ -624,6 +636,7 @@ class Mul(Expr, AssocOp):
             # 2*(1+a) -> 2 + 2 * a
             coeff = c_part[0]
             c_part = [Add(*[coeff*f for f in c_part[1].args])]
+
 
         if ((c_part in lNotPrint == False) and (nc_part in lNotPrint == False)):
             print("Next step: ", c_part, nc_part, order_symbols)
