@@ -9,11 +9,11 @@ z = symbols('z')
 
 # a = 4*x*y*z + 3*y*x*z + 2*z*x*y + 2 + 3
 
-b = "5*x"
+b = "5*x + 3*x"
 
 
 #b = 2*x*x
-print("b: ", b)
+print("b: ", simplify(b))
 # print("Str expr: ", str_expr)
 # a = sympify(str_expr)
 # print("Result: ", a)

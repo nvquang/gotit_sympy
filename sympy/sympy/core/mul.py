@@ -233,7 +233,7 @@ class Mul(Expr, AssocOp):
         # o pnum_rat
         #
         # NOTE: this is optimized for all-objects-are-commutative case
-<<<<<<< HEAD
+
 
 
         print("cls: ", cls)
@@ -243,7 +243,7 @@ class Mul(Expr, AssocOp):
         print("First operand: ", a)
         print("Second operand: ", b)
 
-=======
+
         s = str(type(b))
         lNotPrint = ["<class 'sympy.core.numbers.ImaginaryUnit'>", 
                      "<class 'sympy.core.symbol.Dummy'>", 
@@ -254,7 +254,7 @@ class Mul(Expr, AssocOp):
             print("First operand: ", a)
             print("Second operand: ", b)
             
->>>>>>> f2b5df9fe33d994c5b46e3ef6d54436b3dff8eb2
+
         for o in seq:
             # O(x)
             if o.is_Order:
@@ -637,12 +637,9 @@ class Mul(Expr, AssocOp):
             coeff = c_part[0]
             c_part = [Add(*[coeff*f for f in c_part[1].args])]
 
-<<<<<<< HEAD
-        print("Result: ", c_part, nc_part, order_symbols)
-=======
+
         if ((c_part in lNotPrint == False) and (nc_part in lNotPrint == False)):
             print("We are done: ", c_part, nc_part, order_symbols)
->>>>>>> f2b5df9fe33d994c5b46e3ef6d54436b3dff8eb2
         return c_part, nc_part, order_symbols
 
     def _eval_power(b, e):
