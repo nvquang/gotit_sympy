@@ -42,6 +42,8 @@ class AssocOp(Basic):
         is_commutative = not nc_part
         obj = cls._from_args(c_part + nc_part, is_commutative)
 
+        
+
         if order_symbols is not None:
             return Order(obj, *order_symbols)
         return obj

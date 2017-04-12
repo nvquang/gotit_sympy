@@ -6,8 +6,9 @@ x = symbols('x')
 
 # a = 4*x*y*z + 3*y*x*z + 2*z*x*y + 2 + 3
 
-b = 2*x*x
-print("b: ", b)
+b = "5*x"
+ 
+print("b: ", simplify(b))
 
 # print("Str expr: ", str_expr)
 # a = sympify(str_expr)
