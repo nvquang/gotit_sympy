@@ -626,7 +626,7 @@ class Mul(Expr, AssocOp):
             c_part = [Add(*[coeff*f for f in c_part[1].args])]
 
         if ((c_part in lNotPrint == False) and (nc_part in lNotPrint == False)):
-            print("We are done: ", c_part, nc_part, order_symbols)
+            print("Next step: ", c_part, nc_part, order_symbols)
         return c_part, nc_part, order_symbols
 
     def _eval_power(b, e):

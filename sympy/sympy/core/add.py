@@ -275,7 +275,7 @@ class Add(Expr, AssocOp):
             newseq.insert(0, coeff)
 
         # we are done
-        print("We are done: ", newseq)
+        print("Next Step: ", newseq)
         if noncommutative:
             return [], newseq, None
         else:
