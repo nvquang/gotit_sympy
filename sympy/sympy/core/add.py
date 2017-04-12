@@ -118,11 +118,12 @@ class Add(Expr, AssocOp):
         lNotPrint = ["<class 'sympy.core.numbers.ImaginaryUnit'>", 
                      "<class 'sympy.core.symbol.Dummy'>", 
                      "<class 'sympy.core.symbol.Symbol'>"]
-        if ((a in lNotPrint == False) and (b in lNotPrint == False)):
-            print("Seq: ", seq)
-            print("Add operator")
-            print("First operand: ", a)
-            print("Second operand: ", b)
+        if a is not None and b is not None:
+            if ((a in lNotPrint == False) and (b in lNotPrint == False)):
+                print("Seq: ", seq)
+                print("Add operator")
+                print("First operand: ", a)
+                print("Second operand: ", b)
 
 
         for o in seq:
@@ -277,6 +278,7 @@ class Add(Expr, AssocOp):
             newseq.insert(0, coeff)
 
         # we are done
+        #mmkmk = newseq[1]
         print("Next Step: ", newseq)
         if noncommutative:
             return [], newseq, None

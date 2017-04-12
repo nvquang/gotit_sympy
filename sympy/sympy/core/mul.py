@@ -244,15 +244,17 @@ class Mul(Expr, AssocOp):
         #print("Second operand: ", b)
 
 
-        s = str(type(b))
+        #s = str(type(b))
+        
         lNotPrint = ["<class 'sympy.core.numbers.ImaginaryUnit'>", 
                      "<class 'sympy.core.symbol.Dummy'>", 
                      "<class 'sympy.core.symbol.Symbol'>"]
-        if ((a in lNotPrint == False) and (b in lNotPrint == False)):
-            print("Mul Seq: ", seq)
-            print("Mul operator")
-            print("First operand: ", a)
-            print("Second operand: ", b)
+        if a is not None and b is not None:
+            if ((a in lNotPrint == False) and (b in lNotPrint == False)):
+                #print("Mul Seq: ", seq)
+                print("Muliply")
+                print("First operand: ", a)
+                print("Second operand: ", b)
             
 
         for o in seq:

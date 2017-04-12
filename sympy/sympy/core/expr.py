@@ -104,7 +104,7 @@ class Expr(Basic, EvalfMixin):
     # something better and more powerful.  See issue 5510.
     _op_priority = 10.0
 
-    print("expr.py Quang here ")
+    #("expr.py Quang here ")
 
     def __pos__(self):
         return self
@@ -139,7 +139,7 @@ class Expr(Basic, EvalfMixin):
     @_sympifyit('other', NotImplemented)
     @call_highest_priority('__rmul__')
     def __mul__(self, other):
-        print("Expr.py: mul")
+        #print("Expr.py: mul")
         return Mul(self, other)
 
     @_sympifyit('other', NotImplemented)

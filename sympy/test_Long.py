@@ -9,9 +9,9 @@ z = symbols('z')
 # f, g, h = symbols('f g h', cls=Function)
 
 #a = (-x** + 3*x) + (2*x + 3*y + 2 + 3)
-c =-1/x + 3/x
+c =((x**2-3*x+2)/(x-1))
 #b = 2*x*x
-print("b: ",c)
+print("b: ",simplify(c))
 #print(srepr(a))
 # print("Str expr: ", str_expr)
 # a = sympify(str_expr)
