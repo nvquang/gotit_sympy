@@ -113,11 +113,15 @@ class Add(Expr, AssocOp):
                         # e.g. 3 + ...
         order_factors = []
 
-        print("Seq: ", seq)
-
-        print("Add operator")
-        print("First operand: ", a)
-        print("Second operand: ", b)
+        #s = str(type(b))
+        lNotPrint = ["<class 'sympy.core.numbers.ImaginaryUnit'>", 
+                     "<class 'sympy.core.symbol.Dummy'>", 
+                     "<class 'sympy.core.symbol.Symbol'>"]
+        if ((a in lNotPrint == False) and (b in lNotPrint == False)):
+            print("Seq: ", seq)
+            print("Add operator")
+            print("First operand: ", a)
+            print("Second operand: ", b)
 
         for o in seq:
 
